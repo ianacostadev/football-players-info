@@ -4,7 +4,7 @@ import client from '../services/client';
 const { apiGet } = client;
 
 async function fetchTeams() {
-  return apiGet('teams?id=33');
+  return apiGet('teams?country=spain&league=140&season=2021');
 }
 
 function useTeams() {

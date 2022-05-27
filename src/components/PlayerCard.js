@@ -7,7 +7,13 @@ import Typography from '@mui/material/Typography';
 
 function PlayerCard({ name, photo, nationality, age, weight, height }) {
   return (
-    <Card sx={{ display: 'flex', width: '30.33%' }}>
+    <Card
+      sx={{
+        display: 'flex',
+        width: ['100%', '100%', '30.33%'],
+        justifyContent: 'space-between',
+      }}
+    >
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         <CardContent sx={{ flex: '1 0 auto' }}>
           <Typography component="div" variant="h5">
