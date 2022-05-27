@@ -6,14 +6,21 @@ const fetchOptions = {
   },
 };
 
-const apiGet = (endpoint, customOptions) => {
-  fetch(`${process.env.REACT_APP_API_BASE}${endpoint}`, {
-    ...fetchOptions,
-    ...customOptions,
-  })
-    .then((response) => response.json())
-    .then((response) => response.data)
-    .catch((err) => err);
+const apiGet = async (endpoint, customOptions) => {
+  try {
+    const fetchData = await fetch(
+      `${process.env.REACT_APP_API_BASE}${endpoint}`,
+      {
+        ...fetchOptions,
+        ...customOptions,
+      }
+    );
+    const data = await fetchData.json();
+
+    return data;
+  } catch (error) {
+    return error;
+  }
 };
 
 export default { apiGet };
